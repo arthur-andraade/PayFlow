@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:playflow/modules/home/home_page.dart';
+import 'package:playflow/modules/login/login_page.dart';
+import 'package:playflow/modules/splash/splash_page.dart';
 import 'package:playflow/shared/theme/app_colors.dart';
-
-import 'modules/home/home_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -11,7 +12,12 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primary,
       ),
-      home: HomePage(),
+      initialRoute: "/splash",
+      routes: {
+        "/splash": (context) => SplashPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage()
+      },
     );
   }
 }

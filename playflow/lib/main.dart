@@ -43,6 +43,5 @@ class _AppFirebaseState extends State<AppFirebase> {
         );
       },
     );
-    ;
   }
 }

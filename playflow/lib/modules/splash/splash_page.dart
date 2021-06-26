@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playflow/shared/auth/auth_controller.dart';
 import 'package:playflow/shared/theme/app_colors.dart';
 import 'package:playflow/shared/theme/app_images.dart';
 
@@ -7,6 +8,8 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authController = AuthController();
+    authController.currentUser(context);
     return Scaffold(
       backgroundColor: AppColors.background,
       body: Stack(

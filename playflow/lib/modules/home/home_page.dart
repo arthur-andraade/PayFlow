@@ -60,19 +60,20 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-                onPressed: () {
-                  controller.setPage(0);
-                  setState(() {});
-                },
-                icon: Icon(
-                  Icons.home,
-                  color: controller.currentPage == HOME
-                      ? AppColors.primary
-                      : AppColors.body,
-                )),
+              onPressed: () {
+                controller.setPage(0);
+                setState(() {});
+              },
+              icon: Icon(
+                Icons.home,
+                color: controller.currentPage == HOME
+                    ? AppColors.primary
+                    : AppColors.body,
+              ),
+            ),
             GestureDetector(
-              onTap: () {
-                print("clicou");
+              onTap: () async {
+                await Navigator.pushNamed(context, "/barcode_scanner");
               },
               child: Container(
                 width: 56,
@@ -81,12 +82,9 @@ class _HomePageState extends State<HomePage> {
                   color: AppColors.primary,
                   borderRadius: BorderRadius.circular(5),
                 ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.add_box_outlined,
-                    color: AppColors.background,
-                  ),
+                child: Icon(
+                  Icons.add_box_outlined,
+                  color: AppColors.background,
                 ),
               ),
             ),
